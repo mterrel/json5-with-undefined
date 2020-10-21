@@ -57,6 +57,12 @@ t.test('parse(text)', t => {
         )
 
         t.strictSame(
+            JSON5.parse('{abc:1,def:undefined,ghi:3}'),
+            {abc: 1, def: undefined, ghi: 3},
+            'parses properties with undefined'
+        )
+
+        t.strictSame(
             JSON5.parse('{a:{b:2}}'),
             {a: {b: 2}},
             'parses nested objects'
@@ -98,6 +104,16 @@ t.test('parse(text)', t => {
             JSON5.parse('null'),
             null,
             'parses nulls'
+        )
+
+        t.end()
+    })
+
+    t.test('undefineds', t => {
+        t.equal(
+            JSON5.parse('undefined'),
+            undefined,
+            'parses undefineds'
         )
 
         t.end()
