@@ -1,9 +1,11 @@
-# JSON5 – JSON for Humans
+# JSON5 – JSON for Humans (with support for undefined)
 
-[![Build Status](https://travis-ci.org/json5/json5.svg)][Build Status]
+[![Build Status](https://travis-ci.org/adaptable/json5-with-undefined.svg)][Build Status]
 [![Coverage
 Status](https://coveralls.io/repos/github/json5/json5/badge.svg)][Coverage
 Status]
+
+> This is a fork of the [JSON5 project](https://github.com/json5/json5) that adds support for parsing and serializing the JavaScript/ECMAScript value `undefined`.
 
 The JSON5 Data Interchange Format (JSON5) is a superset of [JSON] that aims to
 alleviate some of the limitations of JSON by expanding its syntax to include
@@ -75,11 +77,11 @@ specification](https://json5.github.io/json5-spec/).
 ## Installation
 ### Node.js
 ```sh
-npm install json5
+npm install json5-with-undefined
 ```
 
 ```js
-const JSON5 = require('json5')
+const JSON5 = require('json5-with-undefined')
 ```
 
 ### Browsers
@@ -149,7 +151,7 @@ When using Node.js, you can `require()` JSON5 files by adding the following
 statement.
 
 ```js
-require('json5/lib/register')
+require('json5-with-undefined/lib/register')
 ```
 
 Then you can load a JSON5 file with a Node.js `require()` statement. For
@@ -165,7 +167,7 @@ converting JSON5 to JSON and for validating the syntax of JSON5 documents.
 
 ### Installation
 ```sh
-npm install --global json5
+npm install --global json5-with-undefined
 ```
 
 ### Usage
@@ -185,8 +187,8 @@ If `<file>` is not provided, then STDIN is used.
 ## Contributing
 ### Development
 ```sh
-git clone https://github.com/json5/json5
-cd json5
+git clone https://github.com/adaptable/json5-with-undefined
+cd json5-with-undefined
 npm install
 ```
 
