@@ -5,7 +5,10 @@
 Status](https://coveralls.io/repos/github/json5/json5/badge.svg)][Coverage
 Status]
 
+> **Fork Extention**
+>
 > This is a fork of the [JSON5 project](https://github.com/json5/json5) that adds support for parsing and serializing the JavaScript/ECMAScript value `undefined`.
+> Changes and additions that are specific to this fork are marked with the phrase **Fork extension**.
 
 The JSON5 Data Interchange Format (JSON5) is a superset of [JSON] that aims to
 alleviate some of the limitations of JSON by expanding its syntax to include
@@ -50,6 +53,9 @@ been extended to JSON5.
 ### White Space
 - Additional white space characters are allowed.
 
+### Undefined values (**Fork Extension**)
+- The value `undefined` is allowed (in addition to `null` from standard JSON).
+
 [IdentifierName]: https://www.ecma-international.org/ecma-262/5.1/#sec-7.6
 
 [IEEE 754]: http://ieeexplore.ieee.org/servlet/opac?punumber=4610933
@@ -67,6 +73,7 @@ No \\n's!",
   positiveSign: +1,
   trailingComma: 'in objects', andIn: ['arrays',],
   "backwardsCompatible": "with JSON",
+  propertiesCanBe: undefined,   // Fork Extension
 }
 ```
 
@@ -101,6 +108,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 Parses a JSON5 string, constructing the JavaScript value or object described by
 the string. An optional reviver function can be provided to perform a
 transformation on the resulting object before it is returned.
+
+(**Fork Extension**) `JSON5.parse` accepts the keyword `undefined`, similarly
+to the keyword `null` and sets properties and other values in the resulting
+object accordingly. This behavior is not configurable.
 
 #### Syntax
     JSON5.parse(text[, reviver])
@@ -142,6 +153,13 @@ properties if a replacer array is specified.
   - `space`: Same as the `space` parameter.
   - `quote`: A String representing the quote character to use when serializing
     strings.
+  - `useUndefined`: (**Fork Extension**) If `useUndefined` is unset or
+    falsey, the generated JSON5 string will contain no uses of the `undefined`
+    keyword and will be identical to using `JSON5.stringify` from the upstream
+    project.
+    If `useUndefined` is truthy, properties and other values that are
+    `undefined` will be stringified as the keyword `undefined` in the
+    resulting JSON5 string.
 
 #### Return value
 A JSON5 string representing the value.
