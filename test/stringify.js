@@ -79,23 +79,23 @@ describe('JSON5', () => {
             })
 
             it('stringifies undefineds with useUndefined', () => {
-                assert.strictEqual(JSON5.stringify(undefined, { useUndefined: true }), 'undefined')
+                assert.strictEqual(JSON5.stringify(undefined, {useUndefined: true}), 'undefined')
             })
 
             it('ignores undefined property by default', () => {
-                assert.strictEqual(JSON5.stringify({ a: undefined, b: 1 }), '{b:1}')
+                assert.strictEqual(JSON5.stringify({a: undefined, b: 1}), '{b:1}')
             })
 
             it('stringifies undefined property with useUndefined', () => {
-                assert.strictEqual(JSON5.stringify({ a: undefined, b: 1 }, { useUndefined: true }), '{a:undefined,b:1}')
+                assert.strictEqual(JSON5.stringify({a: undefined, b: 1}, {useUndefined: true}), '{a:undefined,b:1}')
             })
 
             it('returns null for undefined array element by default', () => {
-                assert.strictEqual(JSON5.stringify([ "a", undefined, "b" ]), "['a',null,'b']")
+                assert.strictEqual(JSON5.stringify(['a', undefined, 'b']), "['a',null,'b']")
             })
 
             it('stringifies undefined array element with useUndefined', () => {
-                assert.strictEqual(JSON5.stringify([ "a", undefined, "b" ], { useUndefined: true }), "['a',undefined,'b']")
+                assert.strictEqual(JSON5.stringify(['a', undefined, 'b'], {useUndefined: true}), "['a',undefined,'b']")
             })
         })
 
