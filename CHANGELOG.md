@@ -1,3 +1,12 @@
+### v2.1.300 [[code][c2.1.300], [diff][d2.1.300]]
+
+[c2.1.300]: https://github.com/adaptable/json5-with-undefined/tree/v2.1.300
+[d2.1.300]: https://github.com/adaptable/json5-with-undefined/compare/v2.1.3...v2.1.300
+
+- New: This is the first release of json5-with-undefined
+- New: Adds support for parsing the keyword `undefined` and generating
+  `undefined` during `JSON5.stringify` if the `useUndefined` option is `true`. ([#1](https://github.com/adaptable/json5-with-undefined/pull/1))
+
 ### v2.1.3 [[code][c2.1.3], [diff][d2.1.3]]
 
 [c2.1.3]: https://github.com/json5/json5/tree/v2.1.3
